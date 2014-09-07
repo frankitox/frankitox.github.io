@@ -1,0 +1,103 @@
+body {
+  background-color: #716c68;
+}
+
+.sticker {
+  box-shadow: 3px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.sticker-heading {
+  border-top: 1px solid #aaa;
+  padding: 1em;
+  font-weight: bold;
+  color: #eee;
+  text-shadow: 0px 2px 2px rgba(75, 75, 75, .75);
+}
+
+.sticker-body {
+  background: white;
+  padding: 1em;
+}
+
+.blue {
+  background-color: #2796cb;
+  background: linear-gradient(to bottom, #3ea8da 0%,#2796cb 100%);
+}
+
+.orange {
+  background-color: #f79556;
+  background: linear-gradient(to bottom, #f79556 0%,#ed6d46 100%);
+}
+.pink {
+  background-color: #e46183;
+  background: linear-gradient(to bottom, #e46183 0%,#d94f73 100%);
+}
+
+.juicy-numbers {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.glyphicon-arrow-up {
+  color: #8ec63e;
+}
+
+.graph-container {
+  border-top: 1px solid #aaa;
+  padding: 1em;
+  height: 400px;
+}
+.graph-options {
+  padding: 1em;
+  background: white;
+}
+
+.shadow {
+  box-shadow: 3px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.flatten tbody {
+  background: white;
+}
+.flatten thead {
+  background: linear-gradient(to bottom, #6EC4A3 0%,#31bc86 100%);
+}
+#resume th {
+  color: white;
+}
+
+#resume td, #resume th {
+  padding: 1em;
+}
+
+#resume tbody tr:nth-child(2n) {
+  background: #f5f5f5;
+}
+.table-footer {
+  margin: 10px 0px;
+}
+
+.pagination > li:first-child > a {
+  border-radius: 0;
+}
+.pagination > li:last-child > a {
+  border-radius: 0;
+}
+.pagination > li.active a {
+  background: #888;
+}
+.pagination > li > a {
+  margin-right: 1em;
+  border: 0;
+  padding: 1em 1.5em;
+  background: #ccc;
+  font-weight: bold;
+  color: white;
+}
+.my-pagination li {
+  display: inline;
+  background: #333;
+}
+.my-pagination a {
+  color: white;
+}
