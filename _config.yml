@@ -39,16 +39,18 @@ kramdown:
 
 # Navigation
 nav:
-  - name:           "About"
-    url:            "/about"
-  - name:           "Archive"
-    url:            "/archive"
-  - name:           "Tags"
-    url:            "/tags"
-  - name:           "Github"
-    url:            "https://github.com/frankitox"
-
-
+  - name:   "About"
+    url:    "/about"
+    target: "_self"
+  - name:   "Archive"
+    url:    "/archive"
+    target: "_self"
+  - name:   "Tags"
+    url:    "/tags"
+    target: "_self"
+  - name:   "Github"
+    url:    "https://github.com/frankitox"
+    target: "_blank"
 
 # Sass
 sass:
