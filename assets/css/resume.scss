@@ -1,0 +1,60 @@
+---
+sitemap: false
+---
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.content-container {
+  width: 210mm;
+  margin: 0 auto;
+  font-family: Raleway; }
+
+.tryptic {
+  @include clearfix ();
+  & > div {
+    width: 33.3333333%;
+    float: left; }
+  & > div.snd {
+    text-align: center; }
+  & > div.trd {
+    text-align: right; } }
+
+header.tryptic {
+  margin-bottom: 1rem; }
+header.tryptic > div.snd {
+  font-size: 20px;
+  text-transform: uppercase; }
+header.tryptic > div.snd span {
+  font-size: 24px; }
+header.tryptic > div.trd {
+  text-align: right; }
+
+.section > h1 {
+  padding-left: .25rem;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid black; }
+.section > h1 span.first-letter {
+  font-size: 16px; }
+
+.subsection {
+  margin-bottom: 1rem; }
+.subsection > .tryptic {
+  margin-bottom: .25rem;
+  padding: 0 .25rem;
+  font-weight: 500; }
+.subsection > .content {
+  padding: 0 .25rem; }
+
+.subsection > .content p {
+  margin: 0; }
+.subsection > .content ul {
+  margin: 0;
+  padding-left: 1.5rem; }
