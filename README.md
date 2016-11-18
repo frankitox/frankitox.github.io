@@ -16,7 +16,52 @@ files and without a YAML front matter¹,
 you'll get them copied to your `_site`
 folder when you compile.
 
+[1] YAML front matter is just a fancy word
+for the upper YAML data in a layout enclosed
+in `---`.
+
 # Layouts and paths.
+
+## Liquid and the site variable.
+In the templates you can use
+[liquid](https://shopify.github.io/liquid/)
+and you have access to your `_config.yml`
+through the use of the `site` variable.
+
+## Importing HTML/CSS/JS
+You'll import a CSS file with the good ol'
+`site.base_url`:
+
+> <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+## Extending layouts
+If you want the layout to be extensible, you
+have the `content` placeholder:
+
+```html
+<div class="content-container">
+  {{ content }}
+</div>
+```
+
+Then, in a *child* layout, you can use YAML front
+matter:
+
+```html
+---
+layout: default
+---
+<header>
+...
+</header>
+```
+
+This *child* can also define `content` in
+itself, so you can nest as many layouts as
+you want. This is a linear nesting. Maybe
+there's another type of declaration to allow
+more flexibility?
+
 
 TODO: Write about:
 - layout inclusion and paths.
