@@ -3,81 +3,89 @@
 # # # # # # # # # # # # #
 
 # Basic
-name:               "franquito"
+name: "franquito"
 
 author:
-  name:             
-  github:           frankitox
-  lastfm:           frankitox91
-  email:            franconbiasin@gmail.com
+  name: "Franco Biasin"
+  github: frankitox
+  lastfm: frankitox91
+  email: franconbiasin@gmail.com
 
 # Google-analytics
 google-analytics:
-  id:               ""
+  id: ""
 
 # Disqus
 disqus:
-  id:               "your-id"
+  id: "your-id"
 
 # URL
-url:                "https://frankitox.github.io"
-baseurl:            ""
+url: "https://frankitox.github.io"
+baseurl: ""
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:           America/Argentina/Buenos_Aires
-permalink:          /:year-:month-:day/:title/
+timezone: America/Argentina/Buenos_Aires
+permalink: /:year-:month-:day/:title/
 
 # Pagination
-paginate:           5
-paginate_path:      /page:num/
+paginate: 5
+paginate_path: /page:num/
 
 # Markdown
-markdown:           kramdown
+markdown: kramdown
 kramdown:
-  imput:            GFM
+  imput: GFM
 
 # Navigation
 nav:
-  - name:   "About"
-    url:    "/about"
+  - name: "About"
+    url: "/about"
     target: "_self"
-  - name:   "Archive"
-    url:    "/archive"
+  - name: "Archive"
+    url: "/archive"
     target: "_self"
-  - name:   "Tags"
-    url:    "/tags"
+  - name: "Tags"
+    url: "/tags"
     target: "_self"
-  - name:   "Résumé"
-    url:    "/resume"
+  - name: "Résumé"
+    url: "/resume"
     target: "_blank"
-  - name:   "Github"
-    url:    "https://github.com/frankitox"
+  - name: "Github"
+    url: "https://github.com/frankitox"
     target: "_blank"
 
 # Sass
 sass:
-  sass_dir:         _sass
-  style:            :compressed
+  sass_dir: _sass
+  style: :compressed
 
 # Scopes
 defaults:
   -
     scope:
-      path:         ""
-      type:         "pages"
+      path: ""
+      type: "pages"
     values:
-      layout:       "page"
+      layout: "page"
   -
     scope:
-      path:         ""
-      type:         "posts"
+      path: ""
+      type: "posts"
     values:
-      layout:       "post"
+      layout: "post"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 gems:
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-multiple-languages-plugin
 
-exclude:            [vendor]
+exclude: ["vendor"]
+
+# jekyll-multiple-languages-plugin config.
+languages: ["en", "es"]
+# To avoid redundancy, it is possible to exclude
+# files and folders from being copied to the
+# localization folders.
+exclude_from_localizations: ["javascript", "images", "css"]

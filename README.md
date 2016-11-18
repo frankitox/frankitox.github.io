@@ -1,3 +1,32 @@
+# Directory structure.
+
+- `_includes` partials parts of a page,
+which can be included in throughout our
+site.
+- `_layouts` same as the previous folder.
+Usually you put here the basic layout which
+includes other sections.
+- `_posts` contains our blogposts, usually
+written in markdown.
+- `_site` is where all the files are
+*compiled*.
+
+If you create other directories with more
+files and without a YAML front matter¹,
+you'll get them copied to your `_site`
+folder when you compile.
+
+# Layouts and paths.
+
+TODO: Write about:
+- layout inclusion and paths.
+- YAML front matter.
+
+Questions.
+
+- How everything is built?
+- What's the include path?
+
 # Kiko Plus Theme
 
 ![image](/images/image.png)
