@@ -1,40 +1,52 @@
-# Directory structure.
+#### Directory structure.
 
 - `_includes` partials parts of a page,
 which can be included in throughout our
 site.
-- `_layouts` same as the previous folder.
-Usually you put here the basic layout which
-includes other sections.
+- `_layouts` partials that can be use as
+baseline for a page.
 - `_posts` contains our blogposts, usually
 written in markdown.
 - `_site` is where all the files are
 *compiled*.
 
-If you create other directories with more
-files and without a YAML front matter¹,
+For other files in root or other folder
+that don't have a YAML front matter¹,
 you'll get them copied to your `_site`
-folder when you compile.
+folder when you compile. If the file has a
+YAML, it will be transformed by Jekyll.
 
 [1] YAML front matter is just a fancy word
 for the upper YAML data in a layout enclosed
 in `---`.
 
-# Layouts and paths.
-
-## Liquid and the site variable.
+#### Liquid and the site variable.
 In the templates you can use
 [liquid](https://shopify.github.io/liquid/)
 and you have access to your `_config.yml`
 through the use of the `site` variable.
 
-## Importing HTML/CSS/JS
-You'll import a CSS file with the good ol'
+#### Importing CSS/JS
+You'll import a CSS/JS file with the good ol'
 `site.base_url`:
 
-> <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+```html
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+```
 
-## Extending layouts
+#### Importing from \_include folder.
+You can import any file from `_include` in
+your layouts with
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+...
+```
+
+#### Extending layouts
 If you want the layout to be extensible, you
 have the `content` placeholder:
 
@@ -44,8 +56,9 @@ have the `content` placeholder:
 </div>
 ```
 
-Then, in a *child* layout, you can use YAML front
-matter:
+Then, in a *child* layout or a final page, you
+can use YAML front matter to refer to the
+layout (without the file extension):
 
 ```html
 ---
@@ -62,15 +75,19 @@ you want. This is a linear nesting. Maybe
 there's another type of declaration to allow
 more flexibility?
 
+#### YAML front matter
+There a couple of special front matter
+variables, these are: `layout`, `permalink`
+to specify a different URL for a post and
+`published` which can be set to false to
+avoid post publication.
+When building a page, joining all the
+partials, you also cram all YAML variables
+together in the `page` variable.
 
-TODO: Write about:
-- layout inclusion and paths.
-- YAML front matter.
-
-Questions.
-
-- How everything is built?
-- What's the include path?
+Note that a variable defined in a contained
+partial will also be available at the upper
+most partial. Which is kind of weird.
 
 # Kiko Plus Theme
 

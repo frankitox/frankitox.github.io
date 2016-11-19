@@ -79,13 +79,5 @@ defaults:
 gems:
   - jekyll-seo-tag
   - jekyll-paginate
-  - jekyll-multiple-languages-plugin
 
 exclude: ["vendor"]
-
-# jekyll-multiple-languages-plugin config.
-languages: ["en", "es"]
-# To avoid redundancy, it is possible to exclude
-# files and folders from being copied to the
-# localization folders.
-exclude_from_localizations: ["javascript", "images", "css"]
