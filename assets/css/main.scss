@@ -6,3 +6,44 @@ sitemap: false
 @import "typography";
 @import "highlighter";
 @import "site";
+
+header#logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+header#logo a {
+  display: inline-block;
+}
+header#logo a:hover #f-letter {
+  transition: all 1s;
+  color: white;
+  background: black;
+  border-color: white;
+}
+header#logo a:hover #b-letter {
+  transition: all .5s ease-in;
+  color: black;
+  background: white;
+  border-color: black;
+}
+header#logo #f-letter, header#logo #b-letter {
+  transition: all .5s ease-in;
+  display: inline-block;
+  width: 1.65em;
+  border: 3px solid rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.9);
+  border-radius: .75rem;
+  font-size: 48px;
+  text-align: left;
+  font-weight: bold;
+  vertical-align: middle;
+  height: 1.5em;
+  line-height: 1;
+}
+header#logo #b-letter {
+  background: black;
+  color: white;
+  border-color: white;
+  margin-left: -2.5rem;
+  margin-top: 2rem;
+}

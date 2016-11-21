@@ -1,13 +1,20 @@
+<header id="logo">
+<a href="#">
+  <div id="f-letter">&nbsp;f</div>
+  <div id="b-letter">&nbsp;b</div>
+</a>
+</header>
 <header class="header">
-  <h1 class="header-title">
-    <a href="{{ site.baseurl }}">{{ site.name }}<span>&#39;s blog</span></a>
-  </h1>
   <nav class="header-nav">
     {% for nav in site.nav %}
       {% if nav.url contains 'http://' or nav.url contains 'https://' %}
         {% assign nav.url = site.baseurl | append: nav.url %}
       {% endif %}
+      {% if forloop.last == true %}
       <a href="{{ nav.url }}" target="{{ nav.target }}">{{ nav.name }}</a>
+      {% else %}
+      <a href="{{ nav.url }}" target="{{ nav.target }}">{{ nav.name }}</a> -
+      {% endif %}
     {% endfor %}
   </nav>
 </header>
