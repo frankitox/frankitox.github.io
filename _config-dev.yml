@@ -1,0 +1,21 @@
+# URL
+url: "http://localhost:4000"
+baseurl: ""
+
+# Navigation
+nav:
+  - name: "Home"
+    url: "http://localhost:4000"
+    target: "_self"
+#  - name: "Archive"
+#    url: "/archive"
+#    target: "_self"
+  - name: "Résumé"
+    url: "/resume"
+    target: "_blank"
+  - name: "Github"
+    url: "https://github.com/frankitox"
+    target: "_blank"
+  - name: "About"
+    url: "/2016-08-15/about/"
+    target: "_self"
