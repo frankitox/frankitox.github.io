@@ -23,7 +23,7 @@ layout: default
 
 
   <!-- Share -->
-  {% if page.share != false %}
+  {% if page.share != false and jekyll.environment == "production" %}
   <div class="post-share">
     <hr>
     {% include share.html %}
