@@ -17,7 +17,7 @@ google-analytics:
 
 # Disqus
 disqus:
-  id: "your-id"
+  id: "francobiasin"
 
 # URL
 url: "https://frankitox.github.io"
@@ -39,9 +39,6 @@ kramdown:
 
 # Navigation
 nav:
-  - name: "About"
-    url: "/about"
-    target: "_self"
   - name: "Archive"
     url: "/archive"
     target: "_self"
@@ -54,6 +51,9 @@ nav:
   - name: "Github"
     url: "https://github.com/frankitox"
     target: "_blank"
+  - name: "About"
+    url: "/about"
+    target: "_self"
 
 # Sass
 sass:
