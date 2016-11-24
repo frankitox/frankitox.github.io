@@ -1,0 +1,33 @@
+body {
+  margin-top: 4rem;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+iframe {
+  width: 100%;
+}
+
+.button-wrapper {
+  text-align: right;
+}
+.button-wrapper button {
+  display: inline-block;
+  border: 0;
+  border-radius: 2px;
+  padding-top: .5rem;
+  padding-right: 1rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background: #ccc;
+  cursor: pointer;
+}
+.button-wrapper button:hover {
+  background: #bbb;
+}
+.button-wrapper button:active {
+  background: #aaa;
+}

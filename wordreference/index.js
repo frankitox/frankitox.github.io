@@ -80,6 +80,43 @@ function playWords(words) {
     });
 }
 
+const Words = {};
+
+const Editor = (() => {
+  let sayButton;
+  let iframe;
+
+  // Note that `.data` doesn't really modify the
+  // data-toggled-text HTML attribute
+  /* private */ function toggleSayButton() {
+    const toggledText =
+      sayButton.data('toggled-text');
+    sayButton.data('toggled-text', sayButton.text())
+    sayButton.html(toggledText);
+  }
+
+  return {
+    checkText() {
+      const text =
+        $(iframe.get(0).contentWindow.document)
+          .find('body').text();
+
+      _.words(_.lowerCase(text));
+    },
+    start() {
+      sayButton = $('button');
+      sayButton.on('click', toggleSayButton.bind(this));
+      iframe = $('iframe');
+      iframe.get(0).contentDocument.designMode = 'on';
+      setInterval(this.checkText.bind(this), 250);
+    },
+  };
+})();
+
+$(document).ready(() => {
+  const iframe = $('iframe').get(0);
+  $(iframe).on('load', Editor.start.bind(Editor));
+});
 
 $(document).ready(() => {
   $('button#say').on('click', (e) => {
@@ -87,5 +124,13 @@ $(document).ready(() => {
     const text = $('textarea#text-to-say').val();
     const words = _.words(text);
     playWords(words);
+  });
+
+  const iframe = $('iframe').get(0);
+  $(iframe).on('load', () => {
+    iframe.contentDocument.designMode = 'on';
+    $(iframe.contentWindow.document).on('keyup', (e) => {
+      console.log($(e.target).text());
+    });
   });
 });

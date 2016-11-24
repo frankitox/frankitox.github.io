@@ -4,13 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width">
+    <link href="index.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)"></script>
     <script src="index.js"></script>
   </head>
   <body>
-    <textarea name="text-to-say" id="text-to-say"></textarea>
-    <button id="say">Say</button>
-    <div id="messages"></div>
+    <div style="display:none">
+      <textarea name="text-to-say" id="text-to-say"></textarea>
+      <!--<button id="say">Say</button>-->
+      <div id="messages"></div>
+    </div>
+
+    <iframe src="iframe.html" frameborder="0"></iframe>
+    <div class="button-wrapper">
+      <button data-toggled-text="Stop">Say</button>
+    </div>
   </body>
 </html>
