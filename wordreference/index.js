@@ -95,20 +95,29 @@ const Editor = (() => {
     sayButton.html(toggledText);
   }
 
-  return {
-    checkText() {
-      const text =
-        $(iframe.get(0).contentWindow.document)
-          .find('body').text();
+  /* private */ function initialization() {
+    sayButton = $('button');
+    sayButton.on('click', toggleSayButton.bind(this));
+    iframe = $('iframe');
+    iframe.get(0).contentDocument.designMode = 'on';
+  }
 
-      _.words(_.lowerCase(text));
-    },
+  /* private */ function loop() {
+    setInterval(this.checkText.bind(this), 250);
+  }
+
+  /* private */ function checkText() {
+    const text =
+      $(iframe.get(0).contentWindow.document)
+        .find('body').text();
+
+    _.words(_.lowerCase(text));
+  }
+
+  return {
     start() {
-      sayButton = $('button');
-      sayButton.on('click', toggleSayButton.bind(this));
-      iframe = $('iframe');
-      iframe.get(0).contentDocument.designMode = 'on';
-      setInterval(this.checkText.bind(this), 250);
+      this.initialization();
+      this.loop();
     },
   };
 })();
@@ -118,19 +127,19 @@ $(document).ready(() => {
   $(iframe).on('load', Editor.start.bind(Editor));
 });
 
-$(document).ready(() => {
-  $('button#say').on('click', (e) => {
-    $('#messages').empty();
-    const text = $('textarea#text-to-say').val();
-    const words = _.words(text);
-    playWords(words);
-  });
-
-  const iframe = $('iframe').get(0);
-  $(iframe).on('load', () => {
-    iframe.contentDocument.designMode = 'on';
-    $(iframe.contentWindow.document).on('keyup', (e) => {
-      console.log($(e.target).text());
-    });
-  });
-});
+// $(document).ready(() => {
+//   $('button#say').on('click', (e) => {
+//     $('#messages').empty();
+//     const text = $('textarea#text-to-say').val();
+//     const words = _.words(text);
+//     playWords(words);
+//   });
+// 
+//   const iframe = $('iframe').get(0);
+//   $(iframe).on('load', () => {
+//     iframe.contentDocument.designMode = 'on';
+//     $(iframe.contentWindow.document).on('keyup', (e) => {
+//       console.log($(e.target).text());
+//     });
+//   });
+// });
