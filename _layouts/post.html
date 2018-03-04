@@ -1,26 +1,13 @@
 ---
 layout: default
 ---
+
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">
-    <time>{{ page.date | date_to_string }}</time>
-  </span>
-  <div class="post-tag">
-    <ul>
-      {% for tag in page.tags %}
-      <li>
-        <a href="{{ site.url }}/tags#{{ tag }}" class="tag">
-          <span class="term">{{ tag }}</span>
-        </a>
-      </li>
-      {% unless forloop.last %}{% endunless %}
-      {% endfor %}
-    </ul>
+  <h1 class="post-title">{{ page.largeTitle }}</h1>
+
+  <div class="post-content">
+    {{ content }}
   </div>
-
-  {{ content }}
-
 
   <!-- Share -->
   {% if page.share != false and jekyll.environment == "production" %}

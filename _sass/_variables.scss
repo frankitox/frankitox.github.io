@@ -1,26 +1,32 @@
-/* SCSS Variables */
+@font-face {
+  font-family: 'Adobe Caslon';
+  font-weight: 400;
+  src: url('adobe-caslon-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Irvin Heading';
+  font-weight: 400;
+  src: url('irvin-heading.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 200;
+  src: url('fira-code-light.woff2') format('woff2');
+}
 
-/*--------------
-  Font
-  -------------- */
-@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600';
+$base-font: Adobe Caslon,Georgia,Times New Roman,Times,serif;
+$heading-font: Irvin Heading,Helvetica Neue,Helvetica,Arial,sans-serif;
 
-$base-font: "Source Sans Pro", Helvetica, Arial, sans-serif;
-$code-font: Menlo, Monaco, monospace;
+$code-font: Fira Code, Monaco, monospace;
 $code-gist-font: Menlo, Monaco, "Courier New", monospace !important;
 
-
-/*--------------
-  Color
-  -------------- */
-$base-color: rgba(#333,0.8);
+$base-color: black;
 $base-lighten-color: lighten($base-color, 50);
 
 $background-color: #fff;
 $background-over-color: #f5f7f9;
 
-$text-color: #333;
-$link-color: #268bd2;
+$link-color: black;
 $code-color: #bf616a;
 $code-background-color: #f9f9f9;
 $table-border-color: #e5e5e5;
